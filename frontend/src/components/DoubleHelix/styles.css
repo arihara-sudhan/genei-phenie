@@ -1,0 +1,23 @@
+.dnaCanvas {
+  width: 40vw;
+  height: 100vh;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px) {
+  .dnaCanvas {
+    width: 100vw;
+    height: 50vh;
+    max-width: none;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .dnaCanvas {
+    height: 40vh;
+  }
+}

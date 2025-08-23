@@ -1,0 +1,325 @@
+.genotype-phenotype-container {
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Josefin Sans', 'Lato', sans-serif;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.list-header h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  color: #e0e7ff;
+  margin: 0;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-count {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+.clear-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  transform: translateY(-1px);
+}
+
+.list-container {
+  max-height: none;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-icon {
+  font-size: clamp(3rem, 8vw, 4rem);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtitle {
+  font-size: clamp(0.875rem, 2vw, 1rem) !important;
+  opacity: 0.7;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.list-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.list-item.slide-in {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.item-number {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 600;
+}
+
+.remove-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: rgba(239, 68, 68, 0.4);
+  transform: scale(1.1);
+}
+
+.genotype-section,
+.phenotype-section {
+  margin-bottom: 1.5rem;
+}
+
+.genotype-section h4,
+.phenotype-section h4 {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #e0e7ff;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.sequence-display {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sequence-text {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  word-break: break-all;
+}
+
+.position-info {
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phenotype-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.phenotype-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.value {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 600;
+}
+
+.phenotype-value {
+  color: #f59e0b;
+}
+
+.confidence-value {
+  color: #10b981;
+}
+
+.gc-value {
+  color: #8b5cf6;
+}
+
+.item-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.timestamp {
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .genotype-phenotype-container {
+    max-width: 95vw;
+    margin: 0 0.5rem;
+  }
+  
+  .list-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .list-container {
+    max-height: 60vh;
+    padding: 0.75rem;
+  }
+  
+  .list-item {
+    padding: 1rem;
+  }
+  
+  .phenotype-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .sequence-display {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .genotype-phenotype-container {
+    max-width: 100vw;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .list-header {
+    padding: 0.75rem;
+  }
+  
+  .list-container {
+    padding: 0.5rem;
+    max-height: 50vh;
+  }
+  
+  .list-item {
+    padding: 0.75rem;
+  }
+  
+  .phenotype-item {
+    padding: 0.75rem;
+  }
+}
